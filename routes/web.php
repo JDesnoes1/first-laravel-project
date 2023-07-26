@@ -23,6 +23,7 @@ Route::get('/about', function() {
 Route::get('/contact-asdf-mpofkf', [ContactController::class, 'index'])->name('con');
 
 //Category Routes
+
 Route::get('/category/all', [CategoryController::class, 'allCat'])->name('all.category');
 Route::post('/category/add', [CategoryController::class, 'addCat'])->name('store.category');
 Route::get('/category/edit/{id}', [CategoryController::class, 'editCat']);
@@ -32,10 +33,13 @@ Route::get('/category/restore/{id}', [CategoryController::class, 'restoreCat']);
 Route::get('/category/pdelete/{id}', [CategoryController::class, 'pdeleteCat']);
 
 //Brand Routes
+
 Route::get('/brand/all', [BrandController::class, 'allBrand'])->name('all.brand');
 Route::post('/brand/add', [BrandController::class, 'addBrand'])->name('store.brand');
 Route::get('/brand/edit/{id}', [BrandController::class, 'editBrand']);
 Route::post('/brand/update/{id}', [BrandController::class, 'updateBrand']);
+Route::get('/brand/delete/{id}', [BrandController::class, 'deleteBrand']);
+
 
 
 
