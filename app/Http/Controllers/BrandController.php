@@ -6,6 +6,7 @@ use App\Models\Brand;
 use App\Models\Multipic;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Intervention\Image\Facades\Image;
 
@@ -129,5 +130,10 @@ class BrandController extends Controller
             ]);
         }
         return Redirect()->back()->with('success', 'Multi images inserted successfully');
+    }
+
+    public function logout(){
+        Auth::logout();
+        return Redirect()->route('login')->with('success', 'Vous avez été déconnecté avec succès !');
     }
 }

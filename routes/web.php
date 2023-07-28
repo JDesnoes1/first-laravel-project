@@ -55,3 +55,5 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'),'verified'])
         return view('admin.index');
     })->name('dashboard');
 });
+
+Route::get('/user/logout', [BrandController::class, 'logout'])->name('user.logout');
