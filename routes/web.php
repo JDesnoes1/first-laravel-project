@@ -51,7 +51,7 @@ Route::post('/multi/add', [BrandController::class, 'addMulti'])->name('store.ima
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'),'verified'])->group(function () {
     Route::get('/dashboard', function () {
         // $users = User::all();
-        $users = DB::table('users')->get();
-        return view('dashboard', compact('users'));
+        // $users = DB::table('users')->get();
+        return view('admin.index');
     })->name('dashboard');
 });
