@@ -5,6 +5,7 @@ use App\Http\Controllers\CategoryController;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\DB;
 
 
@@ -44,6 +45,12 @@ Route::get('/brand/delete/{id}', [BrandController::class, 'deleteBrand']);
 //Multi Routes
 Route::get('/multi/image', [BrandController::class, 'multiPic'])->name('multi.image');
 Route::post('/multi/add', [BrandController::class, 'addMulti'])->name('store.image');
+
+//Admin all routes
+Route::get('/home/slider', [HomeController::class, 'homeSlider'])->name('home.slider');
+Route::get('/add/slider', [HomeController::class, 'addSlider'])->name('add.slider');
+Route::post('/store/slider', [HomeController::class, 'storeSlider'])->name('store.slider');
+
 
 
 
